@@ -12,16 +12,16 @@ public class LaserPointer : MonoBehaviour {
     private Transform laserTransform;
     private Vector3 hitPoint;
 
-    //public Transform cameraRigTransform;
-    //public GameObject teleportRectilePrefab;
-    //private GameObject rectile;
-    //private Transform teleportRectileTransform;
-    //public Transform headTransform;
-    //public Vector3 teleportRectileOffset;
-    //public LayerMask teleportMask;
-    //private bool shouldTeleport;
-    
-	void Awake () {
+    public Transform cameraRigTransform;
+    public GameObject teleportRectilePrefab;
+    private GameObject rectile;
+    private Transform teleportRectileTransform;
+    public Transform headTransform;
+    public Vector3 teleportRectileOffset;
+    public LayerMask teleportMask;
+    private bool shouldTeleport;
+
+    void Awake () {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
 	}
 
@@ -37,18 +37,20 @@ public class LaserPointer : MonoBehaviour {
         if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis0))
         {
             RaycastHit hit;
-            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100/*, teleportMask*/))
+            if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, teleportMask))
             {
                 hitPoint = hit.point;
                 ShowLaser(hit);
-                //rectile.SetActive(true);
-                //teleportRectileTransform.position = hitPoint + teleportRectileOffset;
-                //shouldTeleport = true;
+
+                rectile.SetActive(true);
+                teleportRectileTransform.position = hitPoint + teleportRectileOffset;
+                shouldTeleport = true;
             }
         }
         else
         {
-            laser.SetActive(false);    
+            laser.SetActive(false);
+            rectile.SetActive(false);
         }
 	}
 
