@@ -16,7 +16,32 @@ public class OculusControllerTest : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-	    if (Controller.GetAxis() != Vector2.zero) // Touchpad for Vive; Joystick for Rift
+        if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis0)) // Capacitive touch on Joystick on Rift
+        {
+            Debug.Log(gameObject.name + "Capacitive Touch Axis " + 0);
+        }
+
+        //if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis1))
+        //{
+        //    Debug.Log(gameObject.name + "Capacitive Touch Axis " + 1);
+        //}
+
+        //if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis2)) // Somethign with Grip pressing on Rift
+        //{
+        //    Debug.Log(gameObject.name + "Capacitive Touch Axis " + 2);
+        //}
+
+        //if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis3))
+        //{
+        //    Debug.Log(gameObject.name + "Capacitive Touch Axis " + 3);
+        //}
+
+        //if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis4))
+        //{
+        //    Debug.Log(gameObject.name + "Capacitive Touch Axis " + 4);
+        //}
+
+        if (Controller.GetAxis() != Vector2.zero) // Touchpad for Vive; Joystick for Rift
         {
             Debug.Log(gameObject.name + Controller.GetAxis());
         }	
