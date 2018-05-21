@@ -28,13 +28,16 @@ public class LaserPointer : MonoBehaviour {
     void Start()
     {
         laser = Instantiate(laserPrefab);
-        laserTransform = laser.transform;    
+        laserTransform = laser.transform;
+
+        rectile = Instantiate(teleportRectilePrefab);
+        teleportRectileTransform = rectile.transform;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		//if (Controller.GetPress(SteamVR_Controller.ButtonMask.Touchpad)) // Joystick press
-        if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis0))
+        // Show laser and rectile
+        if (Controller.GetTouch(SteamVR_Controller.ButtonMask.Axis0)) // Joystick touch
         {
             RaycastHit hit;
             if (Physics.Raycast(trackedObj.transform.position, transform.forward, out hit, 100, teleportMask))
@@ -45,14 +48,39 @@ public class LaserPointer : MonoBehaviour {
                 rectile.SetActive(true);
                 teleportRectileTransform.position = hitPoint + teleportRectileOffset;
                 shouldTeleport = true;
+            } else
+            {
+                PreventFurtherTeleport();
             }
         }
         else
         {
-            laser.SetActive(false);
-            rectile.SetActive(false);
+            PreventFurtherTeleport();
+        }
+
+        // Teleport
+        //if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && shouldTeleport) // Joystick press
+        if (Controller.GetHairTriggerDown() && shouldTeleport) // Hair Trigger press (more convenient than pressing the joystick IMHO)
+        {
+            Teleport();
         }
 	}
+
+    private void Teleport()
+    {
+        PreventFurtherTeleport();
+        Vector3 difference = cameraRigTransform.position - headTransform.position;
+        difference.y = 0f;
+        cameraRigTransform.position = hitPoint + difference;
+    }
+    
+    // Prevents teleport in cases, such as when a laser was pointing at the wall, but now it's pointing on the wall.
+    private void PreventFurtherTeleport()
+    {
+        shouldTeleport = false;
+        laser.SetActive(false);
+        rectile.SetActive(false);
+    }
 
     private void ShowLaser(RaycastHit hit)
     {
