@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23938019663678664}
   - component: {fileID: 54184783366858242}
   - component: {fileID: 65131628050740564}
+  - component: {fileID: 114677793866395778}
   m_Layer: 0
   m_Name: RwCube
   m_TagString: Untagged
@@ -56,6 +57,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: ed023db2bffc7d3468c427e18dd7b6fb, type: 2}
   m_StaticBatchInfo:
@@ -111,3 +113,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0030000014, y: 0.003000001, z: 0.0029999996}
   m_Center: {x: -1.7462298e-10, y: -7.566995e-10, z: 4.6566123e-10}
+--- !u!114 &114677793866395778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1695195722927072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 192
+    i1: 5
+    i2: 38
+    i3: 155
+    i4: 86
+    i5: 182
+    i6: 203
+    i7: 244
+    i8: 139
+    i9: 157
+    i10: 153
+    i11: 32
+    i12: 236
+    i13: 116
+    i14: 187
+    i15: 196
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1

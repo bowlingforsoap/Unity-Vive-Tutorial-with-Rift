@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 135222127529920994}
   - component: {fileID: 23892193634306762}
   - component: {fileID: 54143824338457620}
+  - component: {fileID: 114020086796711010}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -56,6 +57,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 443e27d1124468c4f99e2d0c9b10cb00, type: 2}
   m_StaticBatchInfo:
@@ -99,6 +101,38 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &114020086796711010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971169586979208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 59
+    i1: 171
+    i2: 150
+    i3: 194
+    i4: 241
+    i5: 171
+    i6: 104
+    i7: 52
+    i8: 105
+    i9: 32
+    i10: 19
+    i11: 157
+    i12: 217
+    i13: 180
+    i14: 167
+    i15: 234
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!135 &135222127529920994
 SphereCollider:
   m_ObjectHideFlags: 1

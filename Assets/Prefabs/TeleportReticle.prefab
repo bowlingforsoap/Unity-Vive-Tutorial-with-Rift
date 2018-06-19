@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4744717297085500}
   - component: {fileID: 33196478885146148}
   - component: {fileID: 23553092305010376}
+  - component: {fileID: 114546283531734716}
   m_Layer: 0
   m_Name: TeleportReticle
   m_TagString: Untagged
@@ -54,6 +55,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: b224606b8130903498136f35f78e9f62, type: 2}
   m_StaticBatchInfo:
@@ -82,3 +84,35 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639319533735882}
   m_Mesh: {fileID: 4300000, guid: a9e891d1e1a9cb141b96aebaaee994cc, type: 3}
+--- !u!114 &114546283531734716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639319533735882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 207
+    i1: 178
+    i2: 127
+    i3: 112
+    i4: 42
+    i5: 58
+    i6: 248
+    i7: 148
+    i8: 185
+    i9: 24
+    i10: 193
+    i11: 129
+    i12: 99
+    i13: 102
+    i14: 238
+    i15: 25
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
